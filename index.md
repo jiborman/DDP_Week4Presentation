@@ -1,0 +1,54 @@
+---
+title       : "How much of my life have I spent here?"
+subtitle    : Developing Data Products Course Project
+author      : JiBorman
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, quiz, bootstrap, interactive] # {mathjax, quiz, bootstrap}
+ext_widgets : {rCharts: [libraries/leaflet]}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Location matters
+
+Every wonder how much of your lifespan you spent in a certain place? It could be a building at school or a city in general. This application allows you to type in your birthday, a location and length of stay (in days) to determine the percentage of your life spent there. 
+
+--- .class #id 
+
+
+## Background
+This presentation is part of the Course Project for the Coursera Developing Data Products class. The peer assessed assignment has two parts. First, we need to create a Shiny application and deploy it on Rstudio's servers. Second, we should use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application. 
+
+- The app developed for the first part of the assignment is [avalilable here: https://jiborman.shinyapps.io/LocationPercentage/](https://jiborman.shinyapps.io/LocationPercentage/)
+
+- Source code for ui.R and server.R files are [available on the GitHub here](https://github.com/jiborman/DDP_Week4Project)
+
+---
+
+## We can handle any location
+
+Location data comes from the $\text{geocode}$ function in the $\text{ggmap}$ package. This function takes any location and does a Google Maps search for a latitude and longitude. We then use the leaflet package to mark the map in the main panel of the application. 
+
+For example, we can look up the longitude and latitude of the Eiffel Tower.
+
+```r
+library(ggmap)
+geocode("Eiffel Tower")
+```
+
+```
+##        lon      lat
+## 1 2.294481 48.85837
+```
+
+---
+## Try it out
+
+Go to the application [here](https://jiborman.shinyapps.io/LocationPercentage/) to find out how long you've been in a particular location!
+
+
+
+
